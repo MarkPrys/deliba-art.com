@@ -52,18 +52,11 @@ module.exports = async function handler(req, res) {
         const telegramResult = await telegramResponse.json();
 
         if (!telegramResponse.ok || !telegramResult.ok) {
-            console.error('Telegram delivery failed', {
-                status: telegramResponse.status,
-                statusText: telegramResponse.statusText,
-                response: telegramResult
-            });
-
             return res.status(502).json({ ok: false, error: 'Telegram delivery failed' });
         }
 
         return res.status(200).json({ ok: true });
     } catch (error) {
-        console.error('Unexpected server error', error);
         return res.status(500).json({ ok: false, error: 'Unexpected server error' });
     }
 };
