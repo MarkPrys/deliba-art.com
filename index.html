@@ -1166,19 +1166,16 @@
                 status.className = 'form-status is-pending';
 
                 var data = new FormData(form);
-                var message =
-                    'Name: ' + data.get('contact_name') + '\n' +
-                    'Email: ' + data.get('contact_email') + '\n' +
-                    'Message: ' + data.get('contact_message');
 
-                fetch('https://api.telegram.org/bot6855978992:AAGoy9MG1ZNjvLQFOmeSZ6UCKcaJ8-95wF8/sendMessage', {
+                fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        chat_id: '-1002055836665',
-                        text: message
+                        name: data.get('contact_name'),
+                        email: data.get('contact_email'),
+                        message: data.get('contact_message')
                     })
                 })
                 .then(function(response) {
