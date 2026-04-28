@@ -328,9 +328,8 @@ main {
 
 .art-card-media {
     display: block;
-    padding: 14px;
-    background:
-        radial-gradient(circle at top, rgba(255, 243, 223, 0.95), rgba(233, 214, 186, 0.72));
+    padding: 0;
+    background: transparent;
 }
 
 .art-image {
@@ -338,7 +337,7 @@ main {
     aspect-ratio: 2 / 3;
     object-fit: cover;
     object-position: center;
-    border-radius: calc(var(--radius-lg) - 6px);
+    border-radius: 0;
     box-shadow: 0 14px 28px rgba(57, 38, 26, 0.12);
 }
 
