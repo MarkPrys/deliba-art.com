@@ -1140,6 +1140,8 @@
                     this.setAttribute('data-title', meta.title);
                     this.setAttribute('data-description', meta.description);
                     this.setAttribute('title', meta.title + ' - Gela Delibashvili');
+                    $(this).data('title', meta.title);
+                    $(this).data('description', meta.description);
 
                     var image = this.querySelector('img');
                     if (image) {
